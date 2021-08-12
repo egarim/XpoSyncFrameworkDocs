@@ -1,5 +1,6 @@
-# XpoSyncFrameworkDocs
-Documentation for SyncFramework a set of XPO providers offline database synchronization created by BitFrameworks and Xari
+# Xpo SyncFramework Docs
+Documentation for SyncFramework. A set of XPO providers for  database synchronization created by BitFrameworks and Xari
+
 
 
 
