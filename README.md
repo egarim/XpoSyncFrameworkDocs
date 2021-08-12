@@ -23,7 +23,7 @@ then copy the uninstall line
 dotnet new XafXamarinOfflineSync --name YourProjectName
 
 
--Requirements
+#### Requirements
 
 The official nuget feed from developer Express is required since all references comes from the nuget feed, more information here.
 https://docs.devexpress.com/GeneralInformation/116042/installation/install-devexpress-controls-using-nuget-packages/obtain-your-nuget-feed-url
@@ -36,7 +36,7 @@ Here you can find more information on how to add a nuget package source.
 https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-add-source
 
 
-
+#### How to install the template
 
 Install the template from a nuget file
 dotnet new -i BitXari.XafSyncTemplate.1.0.0.nupkg::1.0
@@ -45,16 +45,18 @@ dotnet new -i BitXari.XafSyncTemplate.1.0.0.nupkg::1.0
 help
 dotnet new XafXamarinOfflineSync --help
 
---or--
+#### --or--
 
 Install the template from a nuget feed
 dotnet new -i BitXari.XafSyncTemplate::1.0
 
---or--
+#### --or--
 
 Install the template from a nuget feed
-dotnet new -i BitXari.XafSyncTemplate::1.0.0 --nuget-source https://nuget.bitframeworks.com/nuget/public/v3/index.json
+dotnet new -i BitXari.XafSyncTemplate::21.1.11 --nuget-source https://nuget.bitframeworks.com/nuget/public/v3/index.json
 
+
+#### How to create a new project
 -To create a new project from the template
 
 dotnet new XafXamarinOfflineSync --name YourProjectName
