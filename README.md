@@ -3,7 +3,6 @@ Documentation for SyncFramework. A set of XPO providers for database synchroniza
 
 Xpo SyncFramework is a commercial product, you can get pricing information by contacting us at info@xari.io
 
-
 #### Requirements
 
 The official nuget feed from developer Express is required since all references comes from the nuget feed, more information here.
@@ -78,7 +77,7 @@ To create a new Xaf App (windows forms net 5 and blazor net 5) application with 
 dotnet new XafXamarinOfflineSync --ios --android --name YourProjectName
 ```
 
-### how to connect your emulators to the Sync Server running in your computer
+### How to connect your emulators to the Sync Server running in your computer
 
 There are many ways to connect your emulators to the sync server running in your computer, our preferred option is using Ngrok
 but you can also follow the official Microsoft documentation, all links below
@@ -92,17 +91,41 @@ https://ngrok.com/
 Use ngrok quickly and easily from within Visual Studio. ngrok allows you to expose a local server behind a NAT or firewall to the internet. "Demo without deploying."
 https://marketplace.visualstudio.com/items?itemName=DavidProthero.NgrokExtensions
 
-### how to upgrade nuget versions for your project
+### How to upgrade nuget versions for your project
 
 When you create a solution using this template you will get a build props file as the one in the link below
 
-[Build Props File](Directory.Build.props)
+[Build Props File](DemoApp/Directory.Build.props)
 
+
+```<language>
+<Project>
+	<PropertyGroup>
+		<!--DevExpress version-->
+		<DevExpressVersion>21.1.3</DevExpressVersion>
+		<!--SyncFramework Version-->
+		<SyncFrameworkVersion>21.1.3.28</SyncFrameworkVersion>
+		<!--demo or licensed-->
+		<NugetReferences>demo</NugetReferences>
+		<!--Additional references-->
+		<BITXpo>21.1.3.5841</BITXpo>
+		<BITAspNetCore>21.1.3.5841</BITAspNetCore>
+		<BITDataTransferRestClientNet>21.1.3.5841</BITDataTransferRestClientNet>
+	</PropertyGroup>
+</Project>
+
+```
 Using this file you can easily change the versions of your nuget packages
 
-- DevExpressVersion: set the version of devexpress references
-- SyncFrameworkVersion: set the version of the SyncFramework
-- NugetReferences: use demo to reference the tril version of the SyncFramework otherwise use licensed if you own the full version of the framework
-- BITXpo: Infrastructure needed for network communication https://github.com/egarim/BitFrameWorks/tree/master/src/Xpo/BIT.Data.Xpo
-- BITAspNetCore: Infrastructure needed for network communication https://github.com/egarim/BitFrameWorks/tree/master/src/Xpo/BIT.AspNetCore.Xpo
-- BITDataTransferRestClientNet:  needed for network communication https://github.com/egarim/BitFrameWorks/tree/master/src/Core/BIT.Data.Functions.RestClientNet
+- **DevExpressVersion**: set the version of devexpress references
+- **SyncFrameworkVersion**: set the version of the SyncFramework
+- **NugetReferences**: use demo to reference the trial version of the SyncFramework otherwise use licensed if you own the full version of the framework
+- **BITXpo**: Infrastructure needed for network communication https://github.com/egarim/BitFrameWorks/tree/master/src/Xpo/BIT.Data.Xpo
+- **BITAspNetCore**: Infrastructure needed for network communication https://github.com/egarim/BitFrameWorks/tree/master/src/Xpo/BIT.AspNetCore.Xpo
+- **BITDataTransferRestClientNet**:  needed for network communication https://github.com/egarim/BitFrameWorks/tree/master/src/Core/BIT.Data.Functions.RestClientNet
+
+### Getting started: Create your first offline app with synchronization
+
+If you are new using our SyncFramework solution follow this tutorial to create your first app
+
+[Getting Started](Docs/GettingStarted.md) 

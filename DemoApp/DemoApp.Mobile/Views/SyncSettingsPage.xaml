@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="DemoApp.Mobile.Views.SyncSettingsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid ColumnSpacing="20" Padding="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label FontSize="Medium"  Text="Last Synchronization" Grid.Row="0" Grid.Column="0"/>
+                <Label FontSize="Small"  Text="{Binding LastSynchronization}" Grid.Row="1" Grid.Column="0"/>
+                <Label Text="Server URL" FontSize="Medium" Grid.Row="2" Grid.Column="0" />
+                <Editor Text="{Binding ServerUrl}" FontSize="Small" Margin="0" Grid.Row="3" Grid.Column="0" HeightRequest="100" />
+                <Label Text="Identity" FontSize="Medium" Grid.Row="4" Grid.Column="0" />
+                <Entry Text="{Binding Identity}"  FontSize="Small" Margin="0" Grid.Row="5" Grid.Column="0"  />
+                <Button Text="Save" Command="{Binding SaveSettingsCommand}" BackgroundColor="Green"  FontSize="Medium" Margin="0" Grid.Row="6" Grid.Column="0" BorderColor="Black" BorderWidth="1" TextColor="White"/>
+                <Button Text="Synchronize" Command="{Binding SyncCommand}" BackgroundColor="Blue"  FontSize="Medium" Margin="0" Grid.Row="7" Grid.Column="0" BorderColor="Black" BorderWidth="1" TextColor="White"/>
+            </Grid>
+        </StackLayout>
+      
+    </ContentPage.Content>
+</ContentPage>
