@@ -1,7 +1,7 @@
 # Xpo SyncFramework Docs
-Documentation for SyncFramework. A set of XPO providers for  database synchronization created by BitFrameworks and Xari
+Documentation for SyncFramework. A set of XPO providers for database synchronization created by BitFrameworks and Xari
 
-
+Xpo SyncFramework is a commercial product, you can get pricing information by contacting us at info@xari.io
 
 
 #### Requirements
@@ -23,20 +23,20 @@ https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-add-source
 
 Install the template from a nuget file
 ```<language>
-dotnet new -i BitXari.XafSyncTemplate.21.1.11.nupkg
+dotnet new -i BitXari.XafSyncTemplate.21.1.12.nupkg
 ```
 #### --or--
 
 Install the template from a nuget feed
 ```<language>
-dotnet new -i BitXari.XafSyncTemplate::21.1.11
+dotnet new -i BitXari.XafSyncTemplate::21.1.12
 ```
 
 #### --or--
 
 Install the template from a nuget feed
 ```<language>
-dotnet new -i BitXari.XafSyncTemplate::21.1.11 --nuget-source https://nuget.bitframeworks.com/nuget/public/v3/index.json
+dotnet new -i BitXari.XafSyncTemplate::21.1.12 --nuget-source https://nuget.bitframeworks.com/nuget/public/v3/index.json
 ```
 
 ### How to uninstall the template
@@ -75,15 +75,34 @@ dotnet new XafXamarinOfflineSync --name YourProjectName --ios
 To create a new Xaf App (windows forms net 5 and blazor net 5) application with a SyncServer and iOs and Android clients
 
 ```<language>
-dotnet new XafXamarinOfflineSync --name YourProjectName --xamarinall
+dotnet new XafXamarinOfflineSync --ios --android --name YourProjectName
 ```
 
-### Current issues
+### how to connect your emulators to the Sync Server running in your computer
 
-There is a problem with the template when you do not include all the possible projects. For example, if you create a Xaf only application using the following line
+There are many ways to connect your emulators to the sync server running in your computer, our preferred option is using Ngrok
+but you can also follow the official Microsoft documentation, all links below
 
-```<language>
-dotnet new XafXamarinOfflineSync --name YourProjectName
-```
-The solution will show that the xamarin projects have not been loaded and it's an error because the xamarin projects are not actually there.
-So you need to remove these projects manually
+Connect to local web services
+https://docs.microsoft.com/en-us/xamarin/cross-platform/deploy-test/connect-to-local-web-services
+
+Ngrok exposes local servers behind NATs and firewalls to the public internet over secure tunnels.
+https://ngrok.com/
+
+Use ngrok quickly and easily from within Visual Studio. ngrok allows you to expose a local server behind a NAT or firewall to the internet. "Demo without deploying."
+https://marketplace.visualstudio.com/items?itemName=DavidProthero.NgrokExtensions
+
+### how to upgrade nuget versions for your project
+
+When you create a solution using this template you will get a build props file as the one in the link below
+
+[Build Props File](Directory.Build.props)
+
+Using this file you can easily change the versions of your nuget packages
+
+- DevExpressVersion: set the version of devexpress references
+- SyncFrameworkVersion: set the version of the SyncFramework
+- NugetReferences: use demo to reference the tril version of the SyncFramework otherwise use licensed if you own the full version of the framework
+- BITXpo: Infrastructure needed for network communication https://github.com/egarim/BitFrameWorks/tree/master/src/Xpo/BIT.Data.Xpo
+- BITAspNetCore: Infrastructure needed for network communication https://github.com/egarim/BitFrameWorks/tree/master/src/Xpo/BIT.AspNetCore.Xpo
+- BITDataTransferRestClientNet:  needed for network communication https://github.com/egarim/BitFrameWorks/tree/master/src/Core/BIT.Data.Functions.RestClientNet
