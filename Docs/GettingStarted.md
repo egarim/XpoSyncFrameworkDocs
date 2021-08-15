@@ -15,7 +15,7 @@ To add a business class to your XAF application just use the normal flow describ
 In a XAF application the business classes declared in your module are automatically discovered by the framework as explained [here](https://docs.devexpress.com/eXpressAppFramework/112847/business-model-design-orm/ways-to-add-a-business-class
 ),in your xamarin application you need to manually register your business objects as you can see here [App.xaml.cs](/DemoApp/DemoApp.Mobile/App.xaml.cs)
 
-For example, take look to the following code, the [Product](/DemoApp/DemoApp.Module/BusinessObjects/ApplicationUser.cs) type is a custom type defined in the Xaf agnostic module
+For example, take look to the following code, the [Product](/DemoApp/DemoApp.Module/BusinessObjects/Product.cs) type is a custom type defined in the Xaf agnostic module
 ```csharp
 
       Type[] GetPersistentTypes()
