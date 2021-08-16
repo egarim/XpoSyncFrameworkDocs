@@ -235,7 +235,7 @@ Login Page                 |Settings Page
 ![Login](/Docs/Images/Login.png?raw=true "Ngrok")  |  ![Settings](/Docs/Images/SyncSettings.png?raw=true "Ngrok")
 
 
-As you can see in the images above, once you start your application for first time, the login button is disable because ther **SyncHelperXafSecured** has not been configured
+As you can see in the images above, once you start your application for first time, the login button is disable because the **SyncHelperXafSecured** has not been configured
 so you are forced to navigate to the settings page
 
 In the settings page you can configure the SyncServer URL and the identity of the device, the SyncFramework use the identity to know which changes in the data belongs to this device
