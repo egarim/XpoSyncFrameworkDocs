@@ -104,6 +104,8 @@ in the [Xamarin App (App.xaml.cs) ](/DemoApp/DemoApp.Mobile/App.xaml.cs)
 
 ```
 
+
+
 #### How does all this work?
 
 Data synchronization is possible by creating an instance of the helper class **SyncHelperXafSecured** that implements the following interfaces
@@ -192,6 +194,17 @@ And then registering the instance with [Prism Dependency Injection](https://pris
 ```
 
 You can see the actual registration in your App in this file [App.xaml.cs](/DemoApp/DemoApp.Mobile/App.xaml.cs)
+
+#### Starting your application
+
+Please take a look to the image below
+
+![Solution multi startup project](/Docs/Images/SolutionMultiStartUp.png?raw=true "Solution multi startup")
+
+- You a least need to start one of the XAF applications (highligted in yellow)
+- You a least need to start one of the Xamarin applications (highligted in blue)
+- Start the Sync Server is mandatory for the clients to synchronize data (highligted in green)
+
 
 #### The infrastructure
 

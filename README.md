@@ -82,10 +82,10 @@ dotnet new XafXamarinOfflineSync --ios --android --name YourProjectName
 There are many ways to connect your emulators to the sync server running in your computer, our preferred option is using Ngrok
 but you can also follow the official Microsoft documentation, all links below
 
-Connect to local web services
+**Connect to local web services**
 https://docs.microsoft.com/en-us/xamarin/cross-platform/deploy-test/connect-to-local-web-services
 
-Ngrok exposes local servers behind NATs and firewalls to the public internet over secure tunnels.
+**Ngrok exposes local servers behind NATs and firewalls to the public internet over secure tunnels.**
 https://ngrok.com/
 
 Use ngrok quickly and easily from within Visual Studio. ngrok allows you to expose a local server behind a NAT or firewall to the internet. "Demo without deploying."
@@ -129,3 +129,13 @@ Using this file you can easily change the versions of your nuget packages
 If you are new using our SyncFramework solution follow this tutorial to create your first app
 
 [Getting Started](Docs/GettingStarted.md) 
+
+### General recommendations
+
+**Databases**
+- Don't share delta databases between applications
+
+**Android**
+- Make sure that you provide an unique name for your application package in [AndroidManifest](/DemoApp/DemoApp.Mobile.Android/Properties/AndroidManifest.xml) Otherwise you might end up using an old database for your application and you will get exceptions when processing the deltas
+
+

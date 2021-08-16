@@ -1,6 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DemoApp",
+    "\\DemoApp\\DemoApp.Mobile",
+    "\\DemoApp\\DemoApp.Mobile\\Infrastructure",
+    "\\DemoApp\\DemoApp.Mobile\\ViewModels",
+    "\\DemoApp\\DemoApp.Mobile\\Views",
+    "\\DemoApp\\DemoApp.Module\\BusinessObjects",
+    "\\Docs"
   ],
+  "SelectedNode": "\\Docs\\GettingStarted.md",
   "PreviewInSolutionExplorer": false
 }
