@@ -8,7 +8,7 @@ dotnet new XafXamarinOfflineSync --ios --android --name DemoApp
 ```
 
 
-#### Adding business classes to your xamarin application
+### Adding business classes to your xamarin application
 
 To add a business class to your XAF application just use the normal flow described in this link [implement custom business classes and reference properties xpo](https://docs.devexpress.com/eXpressAppFramework/402163/getting-started/in-depth-tutorial-blazor/business-model-design/business-model-design-with-xpo/implement-custom-business-classes-and-reference-properties-xpo) 
 
@@ -106,7 +106,7 @@ in the [Xamarin App (App.xaml.cs) ](/DemoApp/DemoApp.Mobile/App.xaml.cs)
 
 
 
-#### How does all this work?
+### How does all this work?
 
 Data synchronization is possible by creating an instance of the helper class **SyncHelperXafSecured** that implements the following interfaces
 
@@ -195,7 +195,7 @@ And then registering the instance with [Prism Dependency Injection](https://pris
 
 You can see the actual registration in your App in this file [App.xaml.cs](/DemoApp/DemoApp.Mobile/App.xaml.cs)
 
-#### Starting your application
+### Starting your application
 
 Please take a look to the image below
 
@@ -205,12 +205,12 @@ Please take a look to the image below
 - At least start one of the Xamarin applications (highligted in blue)
 - Start the Sync Server is mandatory for the clients to synchronize data (highligted in green)
 
-#### Applications URLS
+### Applications URLS
 
 - XAF Blazor app: https://localhost:44318/sync
 - SyncServer: https://localhost:44319
 
-#### Using Ngrook to expose your local web applications
+### Using Ngrook to expose your local web applications
 
 When you use Ngrok to expose your local web applications to the internet, you get 2 different URLs per project one is http and the other https
 
@@ -225,15 +225,43 @@ You should use the url pointing to the SyncServer in your Xamarin client
 
 **Remember that everytime you start ngrok you will get differnt URLs for your web applications**
 
-#### Configuring your Xamarin clients
+### Configuring your Xamarin clients
 
 
-Login Page                 |SettingsPage
+Login Page                 |Settings Page
 :-------------------------:|:-------------------------:
 ![Login](/Docs/Images/Login.png?raw=true "Ngrok")  |  ![Settings](/Docs/Images/SyncSettings.png?raw=true "Ngrok")
 
 
-#### The infrastructure
+As you can see in the images above, once you start your application for first time, the login button is disable because ther **SyncHelperXafSecured** has not been configured
+so you are forced to navigate to the settings page
+
+In the settings page you can configure the SyncServer URL and the identity of the device, the SyncFramework use the identity to know which changes in the data belongs to this device
+
+If no identity is provided the identity is calculated using the following code
+
+```csharp
+  this.Identity=Preferences.Get(Constants.IdentityKey, $"{DeviceInfo.Name}-{DeviceInfo.Model}-{DeviceInfo.Manufacturer}".Replace(" ","-"));
+```
+
+After you enter the URL of the SyncServer you should be able to synchronize for first time, please notice that **Last synchronization** date should change
+
+Once you have already synchronized your app you can login with the same users that you use in your XAF application
+
+After first synchronization|Login with a XAF user
+:-------------------------:|:-------------------------:
+![Login](/Docs/Images/AfterSync.png?raw=true "After synchronization")  |  ![Settings](/Docs/Images/LoginAfterSync.png?raw=true "Login synchronization")
+
+After login you will see the home screen and the application menu like in the images below 
+
+Home screen                |Menu screen
+:-------------------------:|:-------------------------:
+![Login](/Docs/Images/Home.png?raw=true "Home screen")  |  ![Settings](/Docs/Images/ApplicationMenu.png?raw=true "Menu screen")
+
+
+
+
+### The infrastructure
 
 This template provides the boilerplate code needed start a new application with synchronization capabilities in little to no time ))
 
