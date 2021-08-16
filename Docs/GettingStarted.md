@@ -18,7 +18,7 @@ In a XAF application the business classes declared in your module are automatica
 For example, take look to the following code, the [Product](/DemoApp/DemoApp.Module/BusinessObjects/Product.cs) type is a custom type defined in the Xaf agnostic module
 ```csharp
 
-      Type[] GetPersistentTypes()
+        Type[] GetPersistentTypes()
         {
             Type[] Types = new Type[] {
                 typeof(Product),
@@ -28,6 +28,8 @@ For example, take look to the following code, the [Product](/DemoApp/DemoApp.Mod
                 typeof(PermissionPolicyTypePermissionObject),
                 typeof(PermissionPolicyObjectPermissionsObject),
                 typeof(PermissionPolicyNavigationPermissionObject),
+                typeof(ModelDifference),
+                typeof(ModelDifferenceAspect)
             };
             return Types;
         }

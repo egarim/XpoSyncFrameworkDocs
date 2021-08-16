@@ -18,6 +18,7 @@ using Xamarin.Essentials;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
+using DevExpress.Persistent.BaseImpl;
 
 namespace DemoApp.Mobile
 {
@@ -65,6 +66,8 @@ namespace DemoApp.Mobile
                 typeof(PermissionPolicyTypePermissionObject),
                 typeof(PermissionPolicyObjectPermissionsObject),
                 typeof(PermissionPolicyNavigationPermissionObject),
+                typeof(ModelDifference),
+                typeof(ModelDifferenceAspect)
             };
             return Types;
         }
