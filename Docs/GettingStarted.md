@@ -201,9 +201,36 @@ Please take a look to the image below
 
 ![Solution multi startup project](/Docs/Images/SolutionMultiStartUp.png?raw=true "Solution multi startup")
 
-- You a least need to start one of the XAF applications (highligted in yellow)
-- You a least need to start one of the Xamarin applications (highligted in blue)
+- At least start one of the XAF applications (highligted in yellow) to create the initial data with the module updater, you can learn about it [here](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.Updating.ModuleUpdater)
+- At least start one of the Xamarin applications (highligted in blue)
 - Start the Sync Server is mandatory for the clients to synchronize data (highligted in green)
+
+#### Applications URLS
+
+- XAF Blazor app: https://localhost:44318/sync
+- SyncServer: https://localhost:44319
+
+#### Using Ngrook to expose your local web applications
+
+When you use Ngrok to expose your local web applications to the internet, you get 2 different URLs per project one is http and the other https
+
+![Ngrok](/Docs/Images/ngrok.png?raw=true "Ngrok")
+
+Please notice the following details on the image above
+
+- The url highlited in blue is pointing to your XAF Blazor application
+- The url highlited in green is pointing to your the SyncServer
+
+You should use the url pointing to the SyncServer in your Xamarin client 
+
+**Remember that everytime you start ngrok you will get differnt URLs for your web applications**
+
+#### Configuring your Xamarin clients
+
+
+Login Page                 |SettingsPage
+:-------------------------:|:-------------------------:
+![Login](/Docs/Images/Login.png?raw=true "Ngrok")  |  ![Settings](/Docs/Images/SyncSettings.png?raw=true "Ngrok")
 
 
 #### The infrastructure
