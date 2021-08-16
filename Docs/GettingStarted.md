@@ -219,7 +219,7 @@ When you use Ngrok to expose your local web applications to the internet, you ge
 Please notice the following details on the image above
 
 - The url highlited in blue is pointing to your XAF Blazor application
-- The url highlited in green is pointing to your the SyncServer
+- The url highlited in yellow is pointing to your the SyncServer
 
 You should use the url pointing to the SyncServer in your Xamarin client 
 
