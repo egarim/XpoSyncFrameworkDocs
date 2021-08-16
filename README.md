@@ -22,20 +22,20 @@ https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-add-source
 
 Install the template from a nuget file
 ```<language>
-dotnet new -i BitXari.XafSyncTemplate.21.1.12.nupkg
+dotnet new -i BitXari.XafSyncTemplate.21.1.13.nupkg
 ```
 #### --or--
 
 Install the template from a nuget feed
 ```<language>
-dotnet new -i BitXari.XafSyncTemplate::21.1.12
+dotnet new -i BitXari.XafSyncTemplate::21.1.13
 ```
 
 #### --or--
 
 Install the template from a nuget feed
 ```<language>
-dotnet new -i BitXari.XafSyncTemplate::21.1.12 --nuget-source https://nuget.bitframeworks.com/nuget/public/v3/index.json
+dotnet new -i BitXari.XafSyncTemplate::21.1.13 --nuget-source https://nuget.bitframeworks.com/nuget/public/v3/index.json
 ```
 
 ### How to uninstall the template
