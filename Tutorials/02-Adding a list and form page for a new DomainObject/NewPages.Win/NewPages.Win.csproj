@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net5.0-windows</TargetFramework>
+		<ApplicationIcon>ExpressApp.ico</ApplicationIcon>
+		<Deterministic>false</Deterministic>
+		<AssemblyVersion>1.0.*</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Model.xafml" />
+		<None Remove="Images\Logo.svg" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="Model.xafml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Images\Logo.svg" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="DevExpress.ExpressApp" Version="$(DevExpressVersion)" />
+		<PackageReference Include="DevExpress.ExpressApp.ReportsV2.Win" Version="$(DevExpressVersion)" />
+		<PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="$(DevExpressVersion)" />
+		<PackageReference Include="DevExpress.ExpressApp.Validation.Win" Version="$(DevExpressVersion)" />
+		<PackageReference Include="DevExpress.ExpressApp.Win" Version="$(DevExpressVersion)" />
+		<PackageReference Include="DevExpress.ExpressApp.Xpo" Version="$(DevExpressVersion)" />
+		<PackageReference Include="DevExpress.Persistent.Base" Version="$(DevExpressVersion)" />
+		<PackageReference Include="DevExpress.Persistent.BaseImpl" Version="$(DevExpressVersion)" />
+		<PackageReference Include="DevExpress.RichEdit.Export" Version="$(DevExpressVersion)" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(NugetReferences)' == 'demo' ">
+		<PackageReference Include="BIT.Xpo.Providers.OfflineDataSync.Demo" Version="$(SyncFrameworkVersion)" />
+		<PackageReference Include="BIT.Xpo.Providers.OfflineDataSync.NetworkExtensions.Demo" Version="$(SyncFrameworkVersion)" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(NugetReferences)' == 'licensed' ">
+		<PackageReference Include="BIT.Xpo.Providers.OfflineDataSync" Version="$(SyncFrameworkVersion)" />
+		<PackageReference Include="BIT.Xpo.Providers.OfflineDataSync.NetworkExtensions" Version="$(SyncFrameworkVersion)" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\NewPages.Module.Win\NewPages.Module.Win.csproj">
+			<Private>True</Private>
+		</ProjectReference>
+		<ProjectReference Include="..\NewPages.Module\NewPages.Module.csproj">
+			<Private>True</Private>
+		</ProjectReference>
+	</ItemGroup>
+</Project>

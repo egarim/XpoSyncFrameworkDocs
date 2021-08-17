@@ -1,15 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DemoApp",
-    "\\DemoApp\\DemoApp.Mobile.Android",
-    "\\DemoApp\\DemoApp.Mobile.Android\\Properties",
-    "\\DemoApp\\DemoApp.Mobile\\Infrastructure",
-    "\\DemoApp\\DemoApp.Mobile\\ViewModels",
-    "\\DemoApp\\DemoApp.Mobile\\Views",
-    "\\Docs",
-    "\\Docs\\Images"
+    "\\Tutorials"
   ],
-  "SelectedNode": "\\DemoApp\\DemoApp.Mobile.Android\\Properties\\AndroidManifest.xml",
+  "SelectedNode": "\\Tutorials\\03-Using XAF Validations on Xamarin",
   "PreviewInSolutionExplorer": false
 }

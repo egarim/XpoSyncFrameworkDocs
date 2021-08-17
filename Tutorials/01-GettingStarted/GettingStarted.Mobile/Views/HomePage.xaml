@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="GettingStarted.Mobile.Views.HomePage">
+    <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+        <Label FontSize="Medium"  Text="Last Synchronization" FontAttributes="Bold" />
+        <Label FontSize="Small"  Text="{Binding LastSynchronization}"/>
+        <Label Text="Server URL" FontSize="Medium" FontAttributes="Bold"/>
+        <Label Text="{Binding ServerUrl}" FontSize="Small" Margin="0"/>
+        <Label Text="Identity" FontSize="Medium" FontAttributes="Bold"/>
+        <Label Text="{Binding Identity}"  FontSize="Small" Margin="0"/>
+        <Label FontSize="Medium"  Text="Transactions to synchronize" FontAttributes="Bold" />
+        <Label FontSize="Small"  Text="{Binding Transactions}"/>
+        <Button Text="Synchronize" Command="{Binding SyncCommand}" BackgroundColor="Blue" FontSize="Medium" Margin="0" BorderColor="Black" BorderWidth="1" TextColor="White"/>
+    </StackLayout>
+</ContentPage>
