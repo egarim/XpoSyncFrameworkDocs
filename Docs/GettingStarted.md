@@ -209,8 +209,8 @@ Please take a look to the image below
 
 ### Applications URLS
 
-- XAF Blazor app: https://localhost:44318/sync
-- SyncServer: https://localhost:44319
+- XAF Blazor app: https://localhost:44319
+- SyncServer: https://localhost:44318/sync
 
 ### Using Ngrook to expose your local web applications
 
