@@ -106,6 +106,86 @@ in the [Xamarin App (App.xaml.cs) ](/DemoApp/DemoApp.Mobile/App.xaml.cs)
 
 ```
 
+### Starting your application
+
+Please take a look to the image below
+
+![Solution multi startup project](/Docs/Images/SolutionMultiStartUp.png?raw=true "Solution multi startup")
+
+- At least start one of the XAF applications (highligted in yellow) to create the initial data with the module updater, you can learn about it [here](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.Updating.ModuleUpdater)
+- At least start one of the Xamarin applications (highligted in blue)
+- Start the Sync Server is mandatory for the clients to synchronize data (highligted in green)
+
+### Applications URLS
+
+- XAF Blazor app: https://localhost:44319
+- SyncServer: https://localhost:44318/sync
+
+### Using Ngrok to expose your local web applications
+
+When you use Ngrok to expose your local web applications to the internet, you get 2 different URLs per project one is http and the other https
+
+![Ngrok](/Docs/Images/ngrok.png?raw=true "Ngrok")
+
+Please notice the following details on the image above
+
+- The url highlited in blue is pointing to your XAF Blazor application
+- The url highlited in yellow is pointing to your the SyncServer
+
+You should use the url pointing to the SyncServer in your Xamarin client 
+
+**Remember that everytime you start ngrok you will get differnt URLs for your web applications**
+
+### Configuring your Xamarin clients
+
+
+Login Page                 |Settings Page
+:-------------------------:|:-------------------------:
+![Login](/Docs/Images/Login.png?raw=true "Ngrok")  |  ![Settings](/Docs/Images/SyncSettings.png?raw=true "Ngrok")
+
+
+As you can see in the images above, once you start your application for first time, the login button is disable because the **SyncHelperXafSecured** has not been configured
+so you are forced to navigate to the settings page
+
+In the settings page you can configure the SyncServer URL and the identity of the device, the SyncFramework use the identity to know which changes in the data belongs to this device
+
+If no identity is provided the identity is calculated using the following code
+
+```csharp
+  this.Identity=Preferences.Get(Constants.IdentityKey, $"{DeviceInfo.Name}-{DeviceInfo.Model}-{DeviceInfo.Manufacturer}".Replace(" ","-"));
+```
+
+After you enter the URL of the SyncServer you should be able to synchronize for first time, please notice that **Last synchronization** date should change
+
+Once you have already synchronized your app you can login with the same users that you use in your XAF application
+
+After first synchronization|Login with a XAF user
+:-------------------------:|:-------------------------:
+![Login](/Docs/Images/AfterSync.png?raw=true "After synchronization")  |  ![Settings](/Docs/Images/LoginAfterSync.png?raw=true "Login synchronization")
+
+After login you will see the home screen and the application menu like in the images below 
+
+Home screen                |Menu screen
+:-------------------------:|:-------------------------:
+![Login](/Docs/Images/Home.png?raw=true "Home screen")  |  ![Settings](/Docs/Images/ApplicationMenu.png?raw=true "Menu screen")
+
+
+
+
+### The infrastructure
+
+This template provides the boilerplate code needed start a new application with synchronization capabilities in little to no time ))
+
+Here is a list of the files that are important in the synchronization flow 
+
+1. [LoginPageViewModel](/DemoApp/DemoApp.Mobile/ViewModels/LoginPageViewModel.cs): Provides the basic functionality to login using XAF security system
+2. [SyncSettingsPageViewModel](/DemoApp/DemoApp.Mobile/ViewModels/SyncSettingsPageViewModel.cs): Allows you to store the configuration values needed to create an instance of SyncHelperXafSecured
+3. [ViewModelBase](/DemoApp/DemoApp.Mobile/Infrastructure/ViewModelBase.cs): Prism basic view model functionality for navigation and data binding
+4. [SyncFrameworkViewModel](/DemoApp/DemoApp.Mobile/Infrastructure/SyncFrameworkViewModel.cs): A view model that include all the services needed for a business appliation includes access to ISyncHelperXafSecured service
+5. [ListPageGenericViewModel](/DemoApp/DemoApp.Mobile/Infrastructure/ListPageGenericViewModel.cs): A view model with the functionality to load a list of records and navigate to a different view passing data about the selected record
+6. [FormPageViewModel](/DemoApp/DemoApp.Mobile/Infrastructure/FormPageViewModel.cs): This view model contains the boiler plate code for CRUD operations
+
+**NOTE**: The use of the files described above is **NOT MANDATORY** you can provide your own implementations
 
 
 ### How does all this work?
@@ -196,87 +276,6 @@ And then registering the instance with [Prism Dependency Injection](https://pris
 ```
 
 You can see the actual registration in your App in this file [App.xaml.cs](/DemoApp/DemoApp.Mobile/App.xaml.cs)
-
-### Starting your application
-
-Please take a look to the image below
-
-![Solution multi startup project](/Docs/Images/SolutionMultiStartUp.png?raw=true "Solution multi startup")
-
-- At least start one of the XAF applications (highligted in yellow) to create the initial data with the module updater, you can learn about it [here](https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.Updating.ModuleUpdater)
-- At least start one of the Xamarin applications (highligted in blue)
-- Start the Sync Server is mandatory for the clients to synchronize data (highligted in green)
-
-### Applications URLS
-
-- XAF Blazor app: https://localhost:44319
-- SyncServer: https://localhost:44318/sync
-
-### Using Ngrook to expose your local web applications
-
-When you use Ngrok to expose your local web applications to the internet, you get 2 different URLs per project one is http and the other https
-
-![Ngrok](/Docs/Images/ngrok.png?raw=true "Ngrok")
-
-Please notice the following details on the image above
-
-- The url highlited in blue is pointing to your XAF Blazor application
-- The url highlited in yellow is pointing to your the SyncServer
-
-You should use the url pointing to the SyncServer in your Xamarin client 
-
-**Remember that everytime you start ngrok you will get differnt URLs for your web applications**
-
-### Configuring your Xamarin clients
-
-
-Login Page                 |Settings Page
-:-------------------------:|:-------------------------:
-![Login](/Docs/Images/Login.png?raw=true "Ngrok")  |  ![Settings](/Docs/Images/SyncSettings.png?raw=true "Ngrok")
-
-
-As you can see in the images above, once you start your application for first time, the login button is disable because the **SyncHelperXafSecured** has not been configured
-so you are forced to navigate to the settings page
-
-In the settings page you can configure the SyncServer URL and the identity of the device, the SyncFramework use the identity to know which changes in the data belongs to this device
-
-If no identity is provided the identity is calculated using the following code
-
-```csharp
-  this.Identity=Preferences.Get(Constants.IdentityKey, $"{DeviceInfo.Name}-{DeviceInfo.Model}-{DeviceInfo.Manufacturer}".Replace(" ","-"));
-```
-
-After you enter the URL of the SyncServer you should be able to synchronize for first time, please notice that **Last synchronization** date should change
-
-Once you have already synchronized your app you can login with the same users that you use in your XAF application
-
-After first synchronization|Login with a XAF user
-:-------------------------:|:-------------------------:
-![Login](/Docs/Images/AfterSync.png?raw=true "After synchronization")  |  ![Settings](/Docs/Images/LoginAfterSync.png?raw=true "Login synchronization")
-
-After login you will see the home screen and the application menu like in the images below 
-
-Home screen                |Menu screen
-:-------------------------:|:-------------------------:
-![Login](/Docs/Images/Home.png?raw=true "Home screen")  |  ![Settings](/Docs/Images/ApplicationMenu.png?raw=true "Menu screen")
-
-
-
-
-### The infrastructure
-
-This template provides the boilerplate code needed start a new application with synchronization capabilities in little to no time ))
-
-Here is a list of the files that are important in the synchronization flow 
-
-1. [LoginPageViewModel](/DemoApp/DemoApp.Mobile/ViewModels/LoginPageViewModel.cs): Provides the basic functionality to login using XAF security system
-2. [SyncSettingsPageViewModel](/DemoApp/DemoApp.Mobile/ViewModels/SyncSettingsPageViewModel.cs): Allows you to store the configuration values needed to create an instance of SyncHelperXafSecured
-3. [ViewModelBase](/DemoApp/DemoApp.Mobile/Infrastructure/ViewModelBase.cs): Prism basic view model functionality for navigation and data binding
-4. [SyncFrameworkViewModel](/DemoApp/DemoApp.Mobile/Infrastructure/SyncFrameworkViewModel.cs): A view model that include all the services needed for a business appliation includes access to ISyncHelperXafSecured service
-5. [ListPageGenericViewModel](/DemoApp/DemoApp.Mobile/Infrastructure/ListPageGenericViewModel.cs): A view model with the functionality to load a list of records and navigate to a different view passing data about the selected record
-6. [FormPageViewModel](/DemoApp/DemoApp.Mobile/Infrastructure/FormPageViewModel.cs): This view model contains the boiler plate code for CRUD operations
-
-**NOTE**: The use of the files described above is **NOT MANDATORY** you can provide your own implementations
 
 
 
