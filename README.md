@@ -138,4 +138,11 @@ If you are new using our SyncFramework solution follow this tutorial to create y
 **Android**
 - Make sure that you provide an unique name for your application package in [AndroidManifest](/DemoApp/DemoApp.Mobile.Android/Properties/AndroidManifest.xml) Otherwise you might end up using an old database for your application and you will get exceptions when processing the deltas
 
+### Tutorials
+
+| Source  | Video |
+| ------------- | ------------- |
+| [01 Getting Started](Tutorials/01-GettingStarted/README.md)  | [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/_Af-iDnKVSU/0.jpg)](https://www.youtube.com/watch?v=_Af-iDnKVSU)  |
+| [02 Adding a list and form page for a new domain object](Tutorials/02-Adding-a-list-and-form-page-for-a-new-DomainObject/README.md)  | [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/OollP2p5eyM/0.jpg)](https://www.youtube.com/watch?v=OollP2p5eyM)  |
+| [03 Using XAF Validations on Xamarin](Tutorials/03-Using-XAF-Validations-on-Xamarin/README.md)  | [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/OollP2p5eyM/0.jpg)](https://www.youtube.com/watch?v=OollP2p5eyM)  |
 
