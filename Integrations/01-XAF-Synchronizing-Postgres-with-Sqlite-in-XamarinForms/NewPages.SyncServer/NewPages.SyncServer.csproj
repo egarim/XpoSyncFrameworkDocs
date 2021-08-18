@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="devexpress.xpo" Version="$(DevExpressVersion)" />
+		<PackageReference Include="BIT.AspNetCore" Version="$(BITAspNetCore)" />
+		<PackageReference Include="BIT.Xpo" Version="$(BITXpo)" />
+		<PackageReference Include="Npgsql" Version="5.0.7" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(NugetReferences)' == 'demo' ">
+		<PackageReference Include="BIT.Xpo.Providers.OfflineDataSync.Demo" Version="$(SyncFrameworkVersion)" />
+		<PackageReference Include="BIT.Xpo.Providers.OfflineDataSync.Server.Demo" Version="$(SyncFrameworkVersion)" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(NugetReferences)' == 'licensed' ">
+		<PackageReference Include="BIT.Xpo.Providers.OfflineDataSync" Version="$(SyncFrameworkVersion)" />
+		<PackageReference Include="BIT.Xpo.Providers.OfflineDataSync.Server" Version="$(SyncFrameworkVersion)" />
+	</ItemGroup>
+</Project>
