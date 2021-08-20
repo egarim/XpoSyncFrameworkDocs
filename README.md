@@ -138,6 +138,14 @@ If you are new using our SyncFramework solution follow this tutorial to create y
 **Android**
 - Make sure that you provide an unique name for your application package in [AndroidManifest](/DemoApp/DemoApp.Mobile.Android/Properties/AndroidManifest.xml) Otherwise you might end up using an old database for your application and you will get exceptions when processing the deltas
 
+
+
+### Theory
+|   | Video |
+| ------------- | ------------- |
+| [SyncFramwork: Synchronization Theory](Docs/XpoOfflineDataSync.pptx)  | [![SyncFramwork: Synchronization Theory](https://img.youtube.com/vi/XVzyXJ43asQ/0.jpg)](https://www.youtube.com/watch?v=XVzyXJ43asQ)  |
+
+
 ### Tutorials
 
 | Source  | Video |
