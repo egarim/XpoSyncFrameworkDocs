@@ -154,6 +154,7 @@ If you are new using our SyncFramework solution follow this tutorial to create y
 | [02 Adding a list and form page for a new domain object](Tutorials/02-Adding-a-list-and-form-page-for-a-new-DomainObject/README.md)  | [![02 Adding a list and form page for a new domain object](https://img.youtube.com/vi/OollP2p5eyM/0.jpg)](https://www.youtube.com/watch?v=OollP2p5eyM)  |
 | [03 Using XAF validations in Xamarin Forms](Tutorials/03-Using-XAF-Validations-on-Xamarin/README.md)  | [![03 Using XAF Validations on Xamarin](https://img.youtube.com/vi/6XE3lC0qzLU/0.jpg)](https://www.youtube.com/watch?v=6XE3lC0qzLU)  |
 | [04 Using XAF security system in Xamarin Forms](Tutorials/04-Using-XAF-SecuritySystem-in-Xamarin/README.md)  | [![04 Using XAF security system in Xamarin](https://img.youtube.com/vi/mtgj0rcIfEc/0.jpg)](https://www.youtube.com/watch?v=mtgj0rcIfEc)  |
+| [05-Using existing database](Tutorials/05-Using-Existing-Database/README.md)  | [![05-Using dxisting database](https://img.youtube.com/vi/mtgj0rcIfEc/0.jpg)](https://www.youtube.com/watch?v=mtgj0rcIfEc)  |
 
 ### Integrations
 | Source  | Video |

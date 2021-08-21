@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!--<TargetFramework>net5.0</TargetFramework>-->
+	<!--Multi target is needed for compatibility with xamarin forms-->
+	<TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
+    <Deterministic>false</Deterministic>
+    <AssemblyVersion>1.0.*</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Model.DesignedDiffs.xafml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.ExpressApp" Version="$(DevExpressVersion)" />
+    <PackageReference Include="DevExpress.ExpressApp.CloneObject" Version="$(DevExpressVersion)" />
+    <PackageReference Include="DevExpress.ExpressApp.ConditionalAppearance" Version="$(DevExpressVersion)" />
+    <PackageReference Include="DevExpress.ExpressApp.Objects" Version="$(DevExpressVersion)" />
+    <PackageReference Include="DevExpress.ExpressApp.ReportsV2" Version="$(DevExpressVersion)" />
+    <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="$(DevExpressVersion)" />
+    <PackageReference Include="DevExpress.ExpressApp.Validation" Version="$(DevExpressVersion)" />
+    <PackageReference Include="DevExpress.ExpressApp.Xpo" Version="$(DevExpressVersion)" />
+    <PackageReference Include="DevExpress.Persistent.Base" Version="$(DevExpressVersion)" />
+    <PackageReference Include="DevExpress.Persistent.BaseImpl" Version="$(DevExpressVersion)" />
+  </ItemGroup>
+</Project>
