@@ -138,6 +138,8 @@ If you are new using our SyncFramework solution follow this tutorial to create y
 **Android**
 - Make sure that you provide an unique name for your application package in [AndroidManifest](/DemoApp/DemoApp.Mobile.Android/Properties/AndroidManifest.xml) Otherwise you might end up using an old database for your application and you will get exceptions when processing the deltas
 
+**Binary data**
+- Avoid storing binary data on your database if it's possible binary data like FileData from XAF creates big deltas that takes long time for synchronize and can drain your mobile device battery and data plan 
 
 
 ### Theory
@@ -154,7 +156,7 @@ If you are new using our SyncFramework solution follow this tutorial to create y
 | [02 Adding a list and form page for a new domain object](Tutorials/02-Adding-a-list-and-form-page-for-a-new-DomainObject/README.md)  | [![02 Adding a list and form page for a new domain object](https://img.youtube.com/vi/OollP2p5eyM/0.jpg)](https://www.youtube.com/watch?v=OollP2p5eyM)  |
 | [03 Using XAF validations in Xamarin Forms](Tutorials/03-Using-XAF-Validations-on-Xamarin/README.md)  | [![03 Using XAF Validations on Xamarin](https://img.youtube.com/vi/6XE3lC0qzLU/0.jpg)](https://www.youtube.com/watch?v=6XE3lC0qzLU)  |
 | [04 Using XAF security system in Xamarin Forms](Tutorials/04-Using-XAF-SecuritySystem-in-Xamarin/README.md)  | [![04 Using XAF security system in Xamarin](https://img.youtube.com/vi/mtgj0rcIfEc/0.jpg)](https://www.youtube.com/watch?v=mtgj0rcIfEc)  |
-| [05-Using existing database](Tutorials/05-Using-Existing-Database/README.md)  | [![05-Using dxisting database](https://img.youtube.com/vi/mtgj0rcIfEc/0.jpg)](https://www.youtube.com/watch?v=mtgj0rcIfEc)  |
+| [05-Using existing database](Tutorials/05-Using-Existing-Database/README.md)  | [![05-Using existing database](https://img.youtube.com/vi/Cc6R4dMz0qk/0.jpg)](https://www.youtube.com/watch?v=Cc6R4dMz0qk)  |
 
 ### Integrations
 | Source  | Video |
