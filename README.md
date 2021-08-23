@@ -139,9 +139,13 @@ If you are new using our SyncFramework solution follow this tutorial to create y
 - Make sure that you provide an unique name for your application package in [AndroidManifest](/DemoApp/DemoApp.Mobile.Android/Properties/AndroidManifest.xml) Otherwise you might end up using an old database for your application and you will get exceptions when processing the deltas
 
 **Binary data**
-- Avoid storing binary data on your database if it's possible binary data like FileData from XAF creates big deltas that takes long time for synchronize and can drain your mobile device battery and data plan 
+- Avoid storing binary data on your database if it's possible, binary data (like FileData from XAF) may use a lot of space in the database, which might result in larger delta transactions. Large deltas take a longer time to synchronize and can drain your mobile device battery and data plan
 
+### Limitations
 
+- **Auto generated integer primery keys**:Avoid using XPObjects that uses an Integer key, integer auto-increment keys depends on the database engine internal infrastructure and they are not possible to replicate. It’s out of the scope of the SyncFramework
+
+https://docs.devexpress.com/XPO/3311/create-a-data-model/xpo-classes-comparison
 ### Theory
 |   | Video |
 | ------------- | ------------- |
@@ -152,13 +156,13 @@ If you are new using our SyncFramework solution follow this tutorial to create y
 
 | Source  | Video |
 | ------------- | ------------- |
-| [01 Getting Started](Tutorials/01-GettingStarted/README.md)  | [![01 Getting Started](https://img.youtube.com/vi/_Af-iDnKVSU/0.jpg)](https://www.youtube.com/watch?v=_Af-iDnKVSU)  |
-| [02 Adding a list and form page for a new domain object](Tutorials/02-Adding-a-list-and-form-page-for-a-new-DomainObject/README.md)  | [![02 Adding a list and form page for a new domain object](https://img.youtube.com/vi/OollP2p5eyM/0.jpg)](https://www.youtube.com/watch?v=OollP2p5eyM)  |
-| [03 Using XAF validations in Xamarin Forms](Tutorials/03-Using-XAF-Validations-on-Xamarin/README.md)  | [![03 Using XAF Validations on Xamarin](https://img.youtube.com/vi/6XE3lC0qzLU/0.jpg)](https://www.youtube.com/watch?v=6XE3lC0qzLU)  |
-| [04 Using XAF security system in Xamarin Forms](Tutorials/04-Using-XAF-SecuritySystem-in-Xamarin/README.md)  | [![04 Using XAF security system in Xamarin](https://img.youtube.com/vi/mtgj0rcIfEc/0.jpg)](https://www.youtube.com/watch?v=mtgj0rcIfEc)  |
-| [05-Using existing database](Tutorials/05-Using-Existing-Database/README.md)  | [![05-Using existing database](https://img.youtube.com/vi/Cc6R4dMz0qk/0.jpg)](https://www.youtube.com/watch?v=Cc6R4dMz0qk)  |
+| [01 Getting Started:Create a XAF Application and Access XAF Data in Xamarin Forms](Tutorials/01-GettingStarted/README.md)  | [![01 Getting Started](https://img.youtube.com/vi/_Af-iDnKVSU/0.jpg)](https://www.youtube.com/watch?v=_Af-iDnKVSU)  |
+| [02 Adding a list and form page to a Xamarin Forms App and access XAF domain objects](Tutorials/02-Adding-a-list-and-form-page-for-a-new-DomainObject/README.md)  | [![02 Adding a list and form page for a new domain object](https://img.youtube.com/vi/OollP2p5eyM/0.jpg)](https://www.youtube.com/watch?v=OollP2p5eyM)  |
+| [03 Using XAF validations in a Xamarin Forms App](Tutorials/03-Using-XAF-Validations-on-Xamarin/README.md)  | [![03 Using XAF Validations on Xamarin](https://img.youtube.com/vi/6XE3lC0qzLU/0.jpg)](https://www.youtube.com/watch?v=6XE3lC0qzLU)  |
+| [04 Using XAF security system in a Xamarin Forms App](Tutorials/04-Using-XAF-SecuritySystem-in-Xamarin/README.md)  | [![04 Using XAF security system in Xamarin](https://img.youtube.com/vi/mtgj0rcIfEc/0.jpg)](https://www.youtube.com/watch?v=mtgj0rcIfEc)  |
+| [05-Using existing XAF database in a Xamarin Forms App](Tutorials/05-Using-Existing-Database/README.md)  | [![05-Using existing database](https://img.youtube.com/vi/Cc6R4dMz0qk/0.jpg)](https://www.youtube.com/watch?v=Cc6R4dMz0qk)  |
 
 ### Integrations
 | Source  | Video |
 | ------------- | ------------- |
-| [01 XAF Synchronizing Postgres with Sqlite in Xamarin Forms](Integrations/01-XAF-Synchronizing-Postgres-with-Sqlite-in-XamarinForms/README.md)  | [![01 XAF Synchronizing Postgres with Sqlite in Xamarin Forms](https://img.youtube.com/vi/KJIQBramrGs/0.jpg)](https://www.youtube.com/watch?v=KJIQBramrGs)  |
+| [01 Synchronizing XAF Postgres database with Sqlite in Xamarin Forms](Integrations/01-XAF-Synchronizing-Postgres-with-Sqlite-in-XamarinForms/README.md)  | [![01 XAF Synchronizing Postgres with Sqlite in Xamarin Forms](https://img.youtube.com/vi/KJIQBramrGs/0.jpg)](https://www.youtube.com/watch?v=KJIQBramrGs)  |
