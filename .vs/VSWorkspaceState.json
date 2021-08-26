@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Tutorials"
+    "\\Docs",
+    "\\Tutorials",
+    "\\Tutorials\\01-GettingStarted"
   ],
+  "SelectedNode": "\\Docs\\GettingStarted.md",
   "PreviewInSolutionExplorer": false
 }

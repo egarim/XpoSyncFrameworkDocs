@@ -22,20 +22,20 @@ https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-nuget-add-source
 
 Install the template from a nuget file
 ```<language>
-dotnet new -i BitXari.XafSyncTemplate.21.1.13.nupkg
+dotnet new -i BitXari.XafSyncTemplate.21.1.3.29.nupkg
 ```
 #### --or--
 
 Install the template from a nuget feed
 ```<language>
-dotnet new -i BitXari.XafSyncTemplate::21.1.13
+dotnet new -i BitXari.XafSyncTemplate::21.1.3.29
 ```
 
 #### --or--
 
 Install the template from a nuget feed
 ```<language>
-dotnet new -i BitXari.XafSyncTemplate::21.1.13 --nuget-source https://nuget.bitframeworks.com/nuget/public/v3/index.json
+dotnet new -i BitXari.XafSyncTemplate::21.1.3.29 --nuget-source https://nuget.bitframeworks.com/nuget/public/v3/index.json
 ```
 
 ### How to uninstall the template
@@ -104,7 +104,7 @@ When you create a solution using this template you will get a build props file a
 		<!--DevExpress version-->
 		<DevExpressVersion>21.1.3</DevExpressVersion>
 		<!--SyncFramework Version-->
-		<SyncFrameworkVersion>21.1.3.28</SyncFrameworkVersion>
+		<SyncFrameworkVersion>21.1.3.29</SyncFrameworkVersion>
 		<!--demo or licensed-->
 		<NugetReferences>demo</NugetReferences>
 		<!--Additional references-->
@@ -161,7 +161,7 @@ https://docs.devexpress.com/XPO/3311/create-a-data-model/xpo-classes-comparison
 | [03 Using XAF validations in a Xamarin Forms App](Tutorials/03-Using-XAF-Validations-on-Xamarin/README.md)  | [![03 Using XAF Validations on Xamarin](https://img.youtube.com/vi/6XE3lC0qzLU/0.jpg)](https://www.youtube.com/watch?v=6XE3lC0qzLU)  |
 | [04 Using XAF security system in a Xamarin Forms App](Tutorials/04-Using-XAF-SecuritySystem-in-Xamarin/README.md)  | [![04 Using XAF security system in Xamarin](https://img.youtube.com/vi/mtgj0rcIfEc/0.jpg)](https://www.youtube.com/watch?v=mtgj0rcIfEc)  |
 | [05-Using existing XAF database in a Xamarin Forms App](Tutorials/05-Using-Existing-Database/README.md)  | [![05-Using existing database](https://img.youtube.com/vi/Cc6R4dMz0qk/0.jpg)](https://www.youtube.com/watch?v=Cc6R4dMz0qk)  |
-
+  [06-Using XAF Custom LogonParameters and Authentication in Xamarin](Tutorials/06-Using-XAF-Custom-LogonParameters-and-Authentication-in-Xamarin/README.md)  | [![05-Using existing database](https://img.youtube.com/vi/Cc6R4dMz0qk/0.jpg)](https://www.youtube.com/watch?v=Cc6R4dMz0qk)  |
 ### Integrations
 | Source  | Video |
 | ------------- | ------------- |
