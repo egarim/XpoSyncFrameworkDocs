@@ -87,10 +87,6 @@ namespace XafXamarinCustomAuth.Mobile.ViewModels
            
 
             containerRegistry.RegisterInstance<ISyncHelperXafSecured>(SyncHelperXafSecure);
-            containerRegistry.Register<IObjectSpace>(() =>
-            {
-                return SyncHelperXafSecure.CreateObjectSpace();
-            });
             this.SyncCommand.RaiseCanExecuteChanged();
         }
 

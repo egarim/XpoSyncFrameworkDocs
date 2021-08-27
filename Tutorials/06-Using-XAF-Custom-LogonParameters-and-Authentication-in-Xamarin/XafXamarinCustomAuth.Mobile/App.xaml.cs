@@ -89,8 +89,7 @@ namespace XafXamarinCustomAuth.Mobile
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<ProductListPage, ProductListPageViewModel>();
             containerRegistry.RegisterForNavigation<ProductFormPage, ProductFormPageViewModel>();
-            Class1 class1 = new Class1();
-            class1.Name = "aaa";
+           
         }
 
         private void RegisterXafSyncHelper(IContainerRegistry containerRegistry)
@@ -103,8 +102,7 @@ namespace XafXamarinCustomAuth.Mobile
                 var SyncHelperXafSecure = new LocalSyncHelperXafSecured(HelperConfiguration.ConnectionString, HelperConfiguration.ServerUrl, HelperConfiguration.Types, HelperConfiguration.UserType, HelperConfiguration.RoleType);
                 containerRegistry.RegisterInstance<ISyncHelperXafSecured>(SyncHelperXafSecure);
             }
-            Class1 class1 = new Class1();
-            class1.Name = "bbb";
+           
         }
 
         private static void EnableXpoDebugLog()
